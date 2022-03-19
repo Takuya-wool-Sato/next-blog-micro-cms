@@ -17,8 +17,12 @@ type blog = {
   tag: string;
 };
 
-// const Home: FC = memo((blog) => {
-export default function Home({ blogs, totalCount }: { blogs: any, totalCount: number }) {
+type Blog = {
+  blogs: any;
+  totalCount: number
+}
+
+const Blog: FC<Blog> = memo(({ blogs, totalCount }) => {
   return (
     <>
       <Layout>
@@ -46,7 +50,7 @@ export default function Home({ blogs, totalCount }: { blogs: any, totalCount: nu
       </Layout>
     </>
   )
-}
+})
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
@@ -60,4 +64,4 @@ export const getStaticProps = async () => {
   };
 };
 
-// export default Home
+export default Blog
