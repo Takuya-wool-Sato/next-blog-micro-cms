@@ -16,8 +16,9 @@ type blog = {
   publishedAt: string;
   tag: string;
 };
+
 // const Home: FC = memo((blog) => {
-export default function Home({ blog, totalCount }: { blog: blog, totalCount: number }) {
+export default function Home({ blogs, totalCount }: { blogs: any, totalCount: number }) {
   return (
     <>
       <Layout>
@@ -29,7 +30,7 @@ export default function Home({ blog, totalCount }: { blog: blog, totalCount: num
         >記事一覧
         </Box>
         <Wrap p={{ base: 2 }} justify="space-between" w={{ base: "100%", md: "90%" }} m="auto" mt="10">
-          {blog.map((blog: blog) => (
+          {blogs.map((blog: blog) => (
             <WrapItem key={blog.id}>
               <PhotoCard
                 id={blog.id}
@@ -53,7 +54,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      blog: data.contents,
+      blogs: data.contents,
       totalCount: data.totalCount
     },
   };
