@@ -48,10 +48,11 @@ export const PhotoCard: VFC<Props> = memo(props => {
         <Stack textAlign="center">
           <Image
             borderRadius="full"
-            boxSize="160px"
             src={imageUrl}
             m="auto"
             objectFit="cover"
+            w="100%"
+            height="160px"
           />
           <HStack spacing={4}>
             <Tag size="sm" key="sm" variant='solid' colorScheme='blue'>

@@ -4,9 +4,10 @@ import { Layout } from '../components/templates/Layout'
 import { client } from "../libs/client";
 import { Box, Wrap, WrapItem } from '@chakra-ui/react'
 import { PhotoCard } from "../components/templates/organisms/PhotoCard";
+import { Pagination } from "../components/templates/Pagenation";
 
 // const Home: FC = memo((blog) => {
-export default function Home({ blog }) {
+export default function Home({ blog, totalCount }) {
   return (
     <>
       <Layout>
@@ -30,6 +31,7 @@ export default function Home({ blog }) {
             </WrapItem>
           ))}
         </Wrap>
+        <Pagination totalCount={totalCount} />
       </Layout>
     </>
   )
@@ -42,6 +44,7 @@ export const getStaticProps = async () => {
   return {
     props: {
       blog: data.contents,
+      totalCount: data.totalCount
     },
   };
 };
