@@ -1,8 +1,8 @@
 import { Box, Wrap, WrapItem } from "@chakra-ui/react";
 import Link from "next/link";
 import { memo, FC } from "react";
-import { PhotoCard } from "../..";
 import { Layout } from "../../../components/templates/Layout";
+import { PhotoCard } from "../../../components/templates/organisms/PhotoCard";
 import { Pagination } from "../../../components/templates/Pagenation";
 import { client } from "../../../libs/client";
 
