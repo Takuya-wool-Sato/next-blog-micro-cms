@@ -28,13 +28,19 @@ export const Layout: FC = memo((props) => {
           <List spacing={3}>
             <ListItem>
               <NextLink href='/blog' passHref>
-                <Link>投稿一覧</Link>
+                <Box
+                  _hover={{ cursor: "pointer", opacity: 0.6 }}
+                  transition="0.3s"
+                >
+                  投稿一覧
+                </Box>
               </NextLink>
             </ListItem>
           </List>
         </Flex>
         <Box
           padding={{ base: 20 }}
+          width={{ base: "100%", md: "calc(100% - 280px)" }}
         >
           {props.children}
         </Box>
