@@ -3,6 +3,7 @@ import { Header } from './Header'
 import { Flex, List, ListItem, Link, Box } from '@chakra-ui/react'
 import NextLink from "next/link"
 
+// eslint-disable-next-line react/display-name
 export const Layout: FC = memo((props) => {
   return (
     <>

@@ -1,6 +1,7 @@
 import { memo, FC } from 'react'
 import { Flex, Box, Heading, Spacer, Button } from '@chakra-ui/react'
 
+// eslint-disable-next-line react/display-name
 export const Header: FC = memo(() => {
   return (
     <>

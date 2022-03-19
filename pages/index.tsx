@@ -22,6 +22,7 @@ type home = {
   totalCount: number
 }
 
+// eslint-disable-next-line react/display-name
 const Home: FC<home> = memo(({ blogs, totalCount }) => {
   return (
     <>
