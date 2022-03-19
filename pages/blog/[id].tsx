@@ -1,20 +1,26 @@
 // pages/blog/[id].js
 import { Layout } from "../../components/templates/Layout";
 import { client } from "../../libs/client";
+import { Box } from '@chakra-ui/react'
+
 
 export default function BlogId({ blog }) {
   return (
     <>
       <Layout>
-        <main>
-          <h1>{blog.title}</h1>
-          <p>{blog.publishedAt}</p>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: `${blog.body}`,
-            }}
-          />
-        </main>
+        <article className="markdown-body">
+          <Box
+            padding={{ base: 10 }}
+          >
+            <h1>{blog.title}</h1>
+            <p>{blog.publishedAt}</p>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `${blog.body}`,
+              }}
+            />
+          </Box>
+        </article>
       </Layout>
     </>
   );
