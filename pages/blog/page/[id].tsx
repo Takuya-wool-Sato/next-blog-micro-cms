@@ -65,7 +65,7 @@ export const getStaticPaths = async () => {
 
   const pageNumbers = [];
 
-  const range = (start, end) =>
+  const range = (start: any, end: any) =>
     [...Array(end - start + 1)].map((_, i) => start + i)
 
   const paths = range(1, Math.ceil(repos.totalCount / PER_PAGE)).map((repo) => `/blog/page/${repo}`)
@@ -73,10 +73,10 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 // データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async (context) => {
+export const getStaticProps = async (context: any) => {
   const id = context.params.id;
 
-  const key = {
+  const key: any = {
     headers: { 'X-MICROCMS-API-KEY': process.env.API_KEY }
   };
 
@@ -87,7 +87,7 @@ export const getStaticProps = async (context) => {
 
   return {
     props: {
-      blog: data.contents,
+      blogs: data.contents,
       totalCount: data.totalCount
     },
   };
