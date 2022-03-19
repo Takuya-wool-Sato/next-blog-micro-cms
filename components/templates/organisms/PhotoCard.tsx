@@ -35,7 +35,7 @@ export const PhotoCard: VFC<Props> = memo(props => {
   return (
     <Link href={`/blog/${id}`}>
       <Box
-        w="400px"
+        w={{ base: "70vw", md: "400px" }}
         bg="white"
         borderRadius="10px"
         shadow="md"

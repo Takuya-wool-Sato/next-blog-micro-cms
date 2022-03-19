@@ -17,7 +17,7 @@ export default function Home({ blog }) {
           fontWeight="bold"
         >記事一覧
         </Box>
-        <Wrap p={{ base: 2 }} justify="space-between" w="90%" m="auto" mt="10">
+        <Wrap p={{ base: 2 }} justify="space-between" w={{ base: "100%", md: "90%" }} m="auto" mt="10">
           {blog.map((blog) => (
             <WrapItem key={blog.id}>
               <PhotoCard

@@ -31,6 +31,8 @@ export const Layout: FC = memo((props) => {
                 <Box
                   _hover={{ cursor: "pointer", opacity: 0.6 }}
                   transition="0.3s"
+                  fontWeight="bold"
+                  textAlign="center"
                 >
                   投稿一覧
                 </Box>
