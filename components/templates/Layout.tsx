@@ -27,7 +27,7 @@ export const Layout: FC = memo((props) => {
         >
           <List spacing={3}>
             <ListItem>
-              <NextLink href='/news' passHref>
+              <NextLink href='/blog' passHref>
                 <Link>投稿一覧</Link>
               </NextLink>
             </ListItem>
