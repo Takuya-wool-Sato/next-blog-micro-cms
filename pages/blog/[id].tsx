@@ -5,7 +5,7 @@ import { Box } from '@chakra-ui/react'
 
 type blog = {
   title: string;
-  publishedAt: string:
+  publishedAt: string;
   body: any;
 }
 
