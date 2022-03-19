@@ -55,7 +55,7 @@ export default function Home({ blogs, totalCount }: { blogs: any, totalCount: nu
 
 // 動的なページを作成
 export const getStaticPaths = async () => {
-  const key = {
+  const key: any = {
     headers: { 'X-MICROCMS-API-KEY': process.env.API_KEY }
   };
 
