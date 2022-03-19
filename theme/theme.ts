@@ -8,6 +8,10 @@ const theme = extendTheme({
         color: "gray.800"
       }
     }
+  },
+  fonts: {
+    heading: 'Open Sans, sans-serif',
+    body: 'Raleway, sans-serif',
   }
 });
 export default theme;

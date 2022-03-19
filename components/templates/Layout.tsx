@@ -15,7 +15,6 @@ export const Layout: FC = memo((props) => {
       >
         <Flex
           as="nav"
-          bg="White"
           color="black"
           padding={{ base: 3, md: 5 }}
           display={{ base: "none", md: "block" }}
@@ -24,6 +23,7 @@ export const Layout: FC = memo((props) => {
           position="sticky"
           overflow-y="auto"
           height="calc(100vh - 56px)"
+          borderRight="1px solid #f4f4fa"
         >
           <List spacing={3}>
             <ListItem>
@@ -39,8 +39,8 @@ export const Layout: FC = memo((props) => {
           </List>
         </Flex>
         <Box
-          padding={{ base: 20 }}
-          width={{ base: "100%", md: "calc(100% - 280px)" }}
+          padding={{ base: 10 }}
+          width={{ base: "100%", md: "calc(90% - 280px)" }}
         >
           {props.children}
         </Box>

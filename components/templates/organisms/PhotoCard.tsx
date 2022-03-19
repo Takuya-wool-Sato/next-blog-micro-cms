@@ -9,11 +9,29 @@ type Props = {
   publishedAt: string;
 };
 
+function sampleDate(date, format) {
+
+  format = format.replace(/YYYY/, date.getFullYear());
+  format = format.replace(/MM/, date.getMonth() + 1);
+  format = format.replace(/DD/, date.getDate());
+
+  return format;
+}
+
+console.log(sampleDate(new Date(), 'YYYY年MM月DD日'));
+
 // eslint-disable-next-line react/display-name
 export const PhotoCard: VFC<Props> = memo(props => {
   // const { id, albumId, title, url, thumbnailUrl } = props;
   const { id, title, imageUrl, publishedAt } = props;
 
+  const Data = (e, format) => {
+    format = format.replace(/YYYY/, e.getFullYear());
+    format = format.replace(/MM/, e.getMonth() + 1);
+    format = format.replace(/DD/, e.getDate());
+
+    return format;
+  }
   return (
     <Link href={`/blog/${id}`}>
       <Box
@@ -38,7 +56,7 @@ export const PhotoCard: VFC<Props> = memo(props => {
             {title}
           </Text>
           <Text>
-            { }
+            {Data(new Date(publishedAt), 'YYYY年MM月DD日')}
           </Text>
         </Stack>
       </Box>
