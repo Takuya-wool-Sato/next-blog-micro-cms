@@ -10,17 +10,6 @@ type Props = {
   tag: string;
 };
 
-function sampleDate(date, format) {
-
-  format = format.replace(/YYYY/, date.getFullYear());
-  format = format.replace(/MM/, date.getMonth() + 1);
-  format = format.replace(/DD/, date.getDate());
-
-  return format;
-}
-
-console.log(sampleDate(new Date(), 'YYYY年MM月DD日'));
-
 // eslint-disable-next-line react/display-name
 export const PhotoCard: VFC<Props> = memo(props => {
   // const { id, albumId, title, url, thumbnailUrl } = props;
