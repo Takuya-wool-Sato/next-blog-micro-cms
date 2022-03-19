@@ -1,13 +1,36 @@
+import Link from "next/link";
 import { memo, FC } from "react";
 import { Layout } from '../components/templates/Layout'
+import { client } from "../libs/client";
 
-
-const Home: FC = memo(() => {
+// const Home: FC = memo((blog) => {
+export default function Home({ blog }) {
   return (
     <>
-      <Layout></Layout>
+      <Layout>
+        <ul>
+          {blog.map((blog) => (
+            <li key={blog.id}>
+              <Link href={`/blog/${blog.id}`}>
+                <a>{blog.title}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Layout>
     </>
   )
-})
+}
 
-export default Home
+// データをテンプレートに受け渡す部分の処理を記述します
+export const getStaticProps = async () => {
+  const data = await client.get({ endpoint: "blog" });
+
+  return {
+    props: {
+      blog: data.contents,
+    },
+  };
+};
+
+// export default Home
