@@ -15,7 +15,7 @@ export const PhotoCard: VFC<Props> = memo(props => {
   // const { id, albumId, title, url, thumbnailUrl } = props;
   const { id, title, imageUrl, publishedAt, tag } = props;
 
-  const Data = (e, format) => {
+  const Data = (e: string, format: string) => {
     format = format.replace(/YYYY/, e.getFullYear());
     format = format.replace(/MM/, e.getMonth() + 1);
     format = format.replace(/DD/, e.getDate());

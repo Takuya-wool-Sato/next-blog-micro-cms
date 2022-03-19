@@ -6,8 +6,18 @@ import { Box, Wrap, WrapItem } from '@chakra-ui/react'
 import { PhotoCard } from "../components/templates/organisms/PhotoCard";
 import { Pagination } from "../components/templates/Pagenation";
 
+type blog = {
+  id: string;
+  title: string;
+  image: {
+    url: string;
+  }
+  imageUrl: string;
+  publishedAt: string;
+  tag: string;
+};
 // const Home: FC = memo((blog) => {
-export default function Home({ blog, totalCount }) {
+export default function Home({ blog, totalCount }: { blog: blog, totalCount: number }) {
   return (
     <>
       <Layout>
@@ -19,7 +29,7 @@ export default function Home({ blog, totalCount }) {
         >記事一覧
         </Box>
         <Wrap p={{ base: 2 }} justify="space-between" w={{ base: "100%", md: "90%" }} m="auto" mt="10">
-          {blog.map((blog) => (
+          {blog.map((blog: blog) => (
             <WrapItem key={blog.id}>
               <PhotoCard
                 id={blog.id}
