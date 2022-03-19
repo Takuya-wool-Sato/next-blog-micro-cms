@@ -4,7 +4,7 @@ import { Layout } from '../components/templates/Layout'
 import { client } from "../libs/client";
 import { Box, Wrap, WrapItem } from '@chakra-ui/react'
 import { PhotoCard } from "../components/templates/organisms/PhotoCard";
-import NextLink from "next/link"
+
 // const Home: FC = memo((blog) => {
 export default function Home({ blog }) {
   return (
@@ -25,6 +25,7 @@ export default function Home({ blog }) {
                 title={blog.title}
                 imageUrl={blog.image.url}
                 publishedAt={blog.publishedAt}
+                tag={blog.tag}
               />
             </WrapItem>
           ))}

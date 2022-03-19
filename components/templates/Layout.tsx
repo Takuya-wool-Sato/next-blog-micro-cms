@@ -4,9 +4,6 @@ import { Flex, List, ListItem, Link, Box } from '@chakra-ui/react'
 import NextLink from "next/link"
 
 export const Layout: FC = memo((props) => {
-  const sideBarNavStyles = {
-    width: '280px'
-  }
   return (
     <>
       <Header />
@@ -16,7 +13,7 @@ export const Layout: FC = memo((props) => {
         <Flex
           as="nav"
           color="black"
-          padding={{ base: 3, md: 5 }}
+          padding={{ base: "30px 0 !important", md: 5 }}
           display={{ base: "none", md: "block" }}
           w="280px"
           top="56px"
@@ -24,8 +21,9 @@ export const Layout: FC = memo((props) => {
           overflow-y="auto"
           height="calc(100vh - 56px)"
           borderRight="1px solid #f4f4fa"
+          bg="white"
         >
-          <List spacing={3}>
+          <List>
             <ListItem>
               <NextLink href='/blog' passHref>
                 <Box
@@ -33,8 +31,11 @@ export const Layout: FC = memo((props) => {
                   transition="0.3s"
                   fontWeight="bold"
                   textAlign="center"
+                  bg="blue.50"
+                  p={3}
+                  mb="20px"
                 >
-                  投稿一覧
+                  記事一覧
                 </Box>
               </NextLink>
             </ListItem>
@@ -43,6 +44,9 @@ export const Layout: FC = memo((props) => {
         <Box
           padding={{ base: 10 }}
           width={{ base: "100%", md: "calc(90% - 280px)" }}
+          m="40px auto"
+          borderRadius="2xl"
+          boxShadow="2xl"
         >
           {props.children}
         </Box>

@@ -1,5 +1,5 @@
 import { memo, VFC } from "react";
-import { Box, Image, Stack, Text } from "@chakra-ui/react";
+import { Box, HStack, Image, Stack, Tag, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
 type Props = {
@@ -7,6 +7,7 @@ type Props = {
   title: string;
   imageUrl: string;
   publishedAt: string;
+  tag: string;
 };
 
 function sampleDate(date, format) {
@@ -23,7 +24,7 @@ console.log(sampleDate(new Date(), 'YYYY年MM月DD日'));
 // eslint-disable-next-line react/display-name
 export const PhotoCard: VFC<Props> = memo(props => {
   // const { id, albumId, title, url, thumbnailUrl } = props;
-  const { id, title, imageUrl, publishedAt } = props;
+  const { id, title, imageUrl, publishedAt, tag } = props;
 
   const Data = (e, format) => {
     format = format.replace(/YYYY/, e.getFullYear());
@@ -52,10 +53,15 @@ export const PhotoCard: VFC<Props> = memo(props => {
             m="auto"
             objectFit="cover"
           />
-          <Text fontSize="lg" fontWeight="bold">
+          <HStack spacing={4}>
+            <Tag size="sm" key="sm" variant='solid' colorScheme='blue'>
+              {tag}
+            </Tag>
+          </HStack>
+          <Text fontSize="lg" fontWeight="bold" textAlign="left">
             {title}
           </Text>
-          <Text>
+          <Text fontSize="small" textAlign="end">
             {Data(new Date(publishedAt), 'YYYY年MM月DD日')}
           </Text>
         </Stack>
