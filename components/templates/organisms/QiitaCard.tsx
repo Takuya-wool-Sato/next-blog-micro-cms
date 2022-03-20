@@ -10,6 +10,10 @@ type Props = {
   tags: [];
 };
 
+type Tags = {
+  name: string;
+}
+
 // eslint-disable-next-line react/display-name
 export const QiitaCard: VFC<Props> = memo(props => {
   // const { id, albumId, title, url, thumbnailUrl } = props;
@@ -40,7 +44,7 @@ export const QiitaCard: VFC<Props> = memo(props => {
             {title}
           </Text>
           <HStack spacing={4}>
-            {tags.map((tag) => (
+            {tags.map((tag: Tags) => (
               <Tag size="sm" key="sm" variant='solid' colorScheme='blue'>
                 {tag.name}
               </Tag>
