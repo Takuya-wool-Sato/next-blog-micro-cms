@@ -30,39 +30,28 @@ const Home: FC<home> = memo(({ blogs, totalCount }) => {
         <Box
           as="h2"
           fontSize="24px"
-          textAlign="center"
+          textAlign="left"
           fontWeight="bold"
-        >記事一覧
+        >Next.js学習のための簡易ブログサイト
         </Box>
-        <Wrap p={{ base: 2 }} justify="space-between" w={{ base: "100%", md: "90%" }} m="auto" mt="10">
-          {blogs.map((blog: blog) => (
-            <WrapItem key={blog.id}>
-              <PhotoCard
-                id={blog.id}
-                title={blog.title}
-                imageUrl={blog.image.url}
-                publishedAt={blog.publishedAt}
-                tag={blog.tag}
-              />
-            </WrapItem>
-          ))}
-        </Wrap>
-        <Pagination totalCount={totalCount} />
+        <Box className="markdown-body" mt={"30px"}>
+          <h3>今回使用したツール</h3>
+          <ul>
+            <li>Next.js</li>
+            <li>Chakra UI</li>
+            <li>Vercel</li>
+          </ul>
+          <p></p>
+          <h3>記事一覧</h3>
+          <p>記事一覧はMicro CMSを使用して、投稿</p>
+          <p>SSG（静的サイトジェネレータ）を使用</p>
+          <h3>Qiita記事一覧</h3>
+          <p>QiitaのNext.jsに関する記事（ストック10以上、作成日順）を出しています</p>
+          <p>ISRを使用して、静的化をして表示</p>
+        </Box>
       </Layout>
     </>
   )
 })
-
-// データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "blog" });
-
-  return {
-    props: {
-      blogs: data.contents,
-      totalCount: data.totalCount
-    },
-  };
-};
 
 export default Home

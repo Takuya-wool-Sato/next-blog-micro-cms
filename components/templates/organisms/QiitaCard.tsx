@@ -1,6 +1,7 @@
 import { memo, VFC } from "react";
-import { Box, HStack, Image, Stack, Tag, Text } from "@chakra-ui/react";
+import { Box, Flex, HStack, Icon, Image, Stack, Tag, Text } from "@chakra-ui/react";
 import Link from "next/link";
+import { AiTwotoneHeart } from "react-icons/ai";
 
 type Props = {
   id: string;
@@ -8,6 +9,7 @@ type Props = {
   imageUrl: string;
   publishedAt: string;
   tags: [];
+  likeCount: string;
 };
 
 type Tags = {
@@ -17,7 +19,7 @@ type Tags = {
 // eslint-disable-next-line react/display-name
 export const QiitaCard: VFC<Props> = memo(props => {
   // const { id, albumId, title, url, thumbnailUrl } = props;
-  const { id, title, imageUrl, publishedAt, tags } = props;
+  const { id, title, imageUrl, publishedAt, tags, likeCount } = props;
 
   const Data = (e: any, format: string) => {
     format = format.replace(/YYYY/, e.getFullYear());
@@ -61,9 +63,15 @@ export const QiitaCard: VFC<Props> = memo(props => {
             borderRight={"8px"}
             position="absolute"
           /> */}
-          <Text fontSize="small" textAlign="end">
-            {Data(new Date(publishedAt), 'YYYY年MM月DD日')}
-          </Text>
+          <Flex justify="space-between">
+            <Flex align={"center"}>
+              <Icon as={AiTwotoneHeart} mr={"4px"} />
+              {likeCount}
+            </Flex>
+            <Text fontSize="small" textAlign="end">
+              {Data(new Date(publishedAt), 'YYYY年MM月DD日')}
+            </Text>
+          </Flex>
         </Stack>
       </Box>
     </Link >

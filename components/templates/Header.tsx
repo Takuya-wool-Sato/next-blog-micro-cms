@@ -1,5 +1,6 @@
 import { memo, FC } from 'react'
 import { Flex, Box, Heading, Spacer, Button } from '@chakra-ui/react'
+import NextLink from "next/link"
 
 // eslint-disable-next-line react/display-name
 export const Header: FC = memo(() => {
@@ -15,7 +16,11 @@ export const Header: FC = memo(() => {
         bgGradient='linear(to-r, blue.50, blue.100)'
       >
         <Box p='2'>
-          <Heading size='md'>Next.js & Micro CMS</Heading>
+          <Heading size='md'>
+            <NextLink href='/' passHref>
+              Next.js study
+            </NextLink>
+          </Heading>
         </Box>
         <Spacer />
         <Button colorScheme='blue'>Button</Button>

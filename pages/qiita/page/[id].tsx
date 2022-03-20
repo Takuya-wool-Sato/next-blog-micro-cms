@@ -20,6 +20,7 @@ type QiitaData = {
   }
   created_at: string;
   tags: [];
+  likes_count: string;
 }
 
 type context = {
@@ -49,6 +50,7 @@ const Qiita: FC<Qiita> = memo(({ qiita }) => {
                 imageUrl={data.user.profile_image_url}
                 publishedAt={data.created_at}
                 tags={data.tags}
+                likeCount={data.likes_count}
               ></QiitaCard>
             </WrapItem>
           ))}
@@ -88,7 +90,7 @@ export const getStaticProps = async (context: context) => {
       'Authorization': `Bearer ${QIITAAPIKEY}`
     },
   }
-  const data = await fetch(`https://qiita.com/api/v2/items?page=${id}&per_page=10&query=tag:Next.js`,
+  const data = await fetch(`https://qiita.com/api/v2/items?page=${id}&per_page=10&query=tag:Next.js+stocks:>10`,
     key
   ).then(res => res.json()).catch(() => null)
   return {
