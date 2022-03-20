@@ -4,12 +4,10 @@ import { client } from "../../libs/client";
 import { Box } from '@chakra-ui/react'
 
 type blog = {
-  title: string;
-  publishedAt: string;
-  body: any;
+
 }
 
-export default function BlogId({ blog }: { blog: blog }) {
+export default function BlogId({ blog }) {
   return (
     <>
       <Layout>

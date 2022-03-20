@@ -3,7 +3,7 @@ import Link from "next/link";
 import { memo, FC } from "react";
 import { Layout } from "../../../components/templates/Layout";
 import { PhotoCard } from "../../../components/templates/organisms/PhotoCard";
-import { Pagination } from "../../../components/templates/Pagenation";
+import { Pagination } from "../../../components/Pagenation";
 import { client } from "../../../libs/client";
 
 

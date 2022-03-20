@@ -25,7 +25,7 @@
     "**/*.tsx",
     "libs/client.js",
     "pages/blog/[id].tsx",
-    "components/templates/Pagenation.js"
+    "components/Pagenation.js"
   ],
   "exclude": [
     "node_modules"

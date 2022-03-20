@@ -4,7 +4,7 @@ import { Layout } from '../components/templates/Layout'
 import { client } from "../libs/client";
 import { Box, Wrap, WrapItem } from '@chakra-ui/react'
 import { PhotoCard } from "../components/templates/organisms/PhotoCard";
-import { Pagination } from "../components/templates/Pagenation";
+import { Pagination } from "../components/Pagenation";
 
 type blog = {
   id: string;
