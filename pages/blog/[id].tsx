@@ -13,6 +13,7 @@ type Blog = {
   };
 }
 
+// eslint-disable-next-line react/display-name
 const Blog: FC<Blog> = memo(({ blog }) => {
   return (
     <>
