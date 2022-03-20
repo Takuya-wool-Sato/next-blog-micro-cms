@@ -95,6 +95,7 @@ export const getStaticProps = async (context: context) => {
     props: {
       qiita: data
     },
+    revalidate: 60, // ここを追加
   };
 };
 
