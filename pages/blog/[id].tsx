@@ -2,9 +2,18 @@
 import { Layout } from "../../components/templates/Layout";
 import { client } from "../../libs/client";
 import { Box } from '@chakra-ui/react'
+import { FC, memo } from "react";
 
 
-export default function BlogId({ blog }) {
+type Blog = {
+  blog: {
+    title: string;
+    publishedAt: string;
+    body: any;
+  };
+}
+
+const Blog: FC<Blog> = memo(({ blog }) => {
   return (
     <>
       <Layout>
@@ -24,7 +33,7 @@ export default function BlogId({ blog }) {
       </Layout>
     </>
   );
-}
+});
 
 // 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
@@ -45,3 +54,5 @@ export const getStaticProps = async (context: any) => {
     },
   };
 };
+
+export default Blog
