@@ -1,14 +1,18 @@
 import { Box } from "@chakra-ui/react";
-import Link from "next/link";
 import { memo, FC } from "react";
 import { Layout } from "../../components/templates/Layout";
 
-// const QIITAURL = process.env.QIITA_ENDPOINT_URL
-// const QIITAAPIKEY = b5c11a364f3c7036d76fe1cca6ffc3001e5f4279
+const QIITAAPIKEY = process.env.QIITA_API_KEY
 
-
+type Qiita = {
+  qiita: {
+    title: string;
+    publishedAt: string;
+    rendered_body: any;
+  };
+}
 // eslint-disable-next-line react/display-name
-const Blog: FC<> = memo(({ qiita }) => {
+const Qiita: FC<Qiita> = memo(({ qiita }) => {
   console.log(qiita)
   return (
     <>
@@ -54,7 +58,7 @@ export const getStaticProps = async (context: any) => {
   const key = {
     headers: {
       'Accept': 'application/json',
-      'Authorization': `Bearer b5c11a364f3c7036d76fe1cca6ffc3001e5f4279`
+      'Authorization': `Bearer ${QIITAAPIKEY}`
     },
   }
   const data = await fetch(`https://qiita.com/api/v2/items/${id}`,
@@ -67,4 +71,4 @@ export const getStaticProps = async (context: any) => {
   };
 };
 
-export default Blog
+export default Qiita

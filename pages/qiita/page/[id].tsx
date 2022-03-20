@@ -4,13 +4,31 @@ import { Layout } from "../../../components/templates/Layout";
 import { QiitaCard } from "../../../components/templates/organisms/QiitaCard";
 import { QiitaPagination } from "../../../components/QiitaPagination";
 
-const QIITAURL = process.env.QIITA_ENDPOINT_URL
-// const QIITAAPIKEY = b5c11a364f3c7036d76fe1cca6ffc3001e5f4279
 const PER_PAGE = 10
 const totalCount = 100
+const QIITAAPIKEY = process.env.QIITA_API_KEY
 
+type Qiita = {
+  qiita: [];
+}
+
+type QiitaData = {
+  id: string;
+  title: string;
+  user: {
+    profile_image_url: string;
+  }
+  created_at: string;
+  tags: [];
+}
+
+type context = {
+  params: {
+    id: string;
+  }
+}
 // eslint-disable-next-line react/display-name
-const Blog: FC<> = memo(({ qiita }) => {
+const Qiita: FC<Qiita> = memo(({ qiita }) => {
   console.log(qiita)
   return (
     <>
@@ -23,7 +41,7 @@ const Blog: FC<> = memo(({ qiita }) => {
         >記事一覧
         </Box>
         <Wrap p={{ base: 2 }} justify="space-between" alignItems={"stretch"} w={{ base: "100%", md: "90%" }} m="auto" mt="10">
-          {qiita.map((data) => (
+          {qiita.map((data: QiitaData) => (
             <WrapItem key={data.id} w="100%">
               <QiitaCard
                 id={data.id}
@@ -62,12 +80,12 @@ export const getStaticPaths = async () => {
 };
 
 // データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async (context) => {
+export const getStaticProps = async (context: context) => {
   const id = context.params.id;
   const key = {
     headers: {
       'Accept': 'application/json',
-      'Authorization': `Bearer b5c11a364f3c7036d76fe1cca6ffc3001e5f4279`
+      'Authorization': `Bearer ${QIITAAPIKEY}`
     },
   }
   const data = await fetch(`https://qiita.com/api/v2/items?page=${id}&per_page=10&query=tag:Next.js`,
@@ -80,4 +98,4 @@ export const getStaticProps = async (context) => {
   };
 };
 
-export default Blog
+export default Qiita

@@ -3,9 +3,6 @@ import { Layout } from "../../components/templates/Layout";
 import { client } from "../../libs/client";
 import { Box } from '@chakra-ui/react'
 
-type blog = {
-
-}
 
 export default function BlogId({ blog }) {
   return (
