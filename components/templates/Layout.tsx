@@ -1,8 +1,7 @@
 import { memo, FC } from 'react'
 import { Header } from './Header'
-import { Flex, List, ListItem, Link, Box } from '@chakra-ui/react'
+import { Flex, List, ListItem, Box } from '@chakra-ui/react'
 import NextLink from "next/link"
-import { signIn, signOut, useSession } from "next-auth/client";
 
 // eslint-disable-next-line react/display-name
 export const Layout: FC = memo((props) => {
