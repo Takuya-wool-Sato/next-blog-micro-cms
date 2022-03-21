@@ -10,7 +10,7 @@ const totalCount = 100
 const ZennAPIKEY = process.env.Zenn_API_KEY
 
 type Zenn = {
-  Zenn: [];
+  zenn: [];
 };
 
 type ZennData = {

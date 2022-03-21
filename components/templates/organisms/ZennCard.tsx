@@ -22,7 +22,6 @@ type Tags = {
 
 // eslint-disable-next-line react/display-name
 export const ZennCard: VFC<Props> = memo(props => {
-  // const { id, albumId, title, url, thumbnailUrl } = props;
   const { id, title, imageUrl, publishedAt, likedCount, slug, user, emoji } = props;
 
   const Data = (e: any, format: string) => {
