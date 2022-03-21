@@ -39,7 +39,7 @@ const Zenn: FC<Zenn> = memo(({ zenn }) => {
           fontWeight="bold"
         >Zenn記事一覧
         </Box>
-        <Wrap
+        {/* <Wrap
           p={{ base: 2 }}
           justify="space-between"
           alignItems={"stretch"}
@@ -60,7 +60,7 @@ const Zenn: FC<Zenn> = memo(({ zenn }) => {
               ></ZennCard>
             </WrapItem>
           ))}
-        </Wrap>
+        </Wrap> */}
         {/* <ZennPagination totalCount={totalCount} /> */}
       </Layout>
     </>
