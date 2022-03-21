@@ -75,7 +75,7 @@ export const getStaticProps = async () => {
       // 'Authorization': `Bearer ${ZennAPIKEY}`
     },
   }
-  const data = await fetch(`https://next-blog-micro-cms.vercel.app/api/zenn`,
+  const data = await fetch(`next-blog-micro-cms-l8zf7g50e-takuya-wool-sato.vercel.app/api/zenn`,
     key
   ).then(res => res.json()).catch(() => null)
   return {
