@@ -47,6 +47,8 @@ const Home: FC<home> = memo(({ blogs, totalCount }) => {
           <h3>目的</h3>
           <p>ReactのUIコンポーネントに触れるため</p>
           <p>Next.jsの機能SSG,ISRを活用するため</p>
+          <h3>github</h3>
+          <p><a href="https://github.com/Takuya-wool-Sato/next-blog-micro-cms" target="_blank" rel="noopener noreferrer">https://github.com/Takuya-wool-Sato/next-blog-micro-cms</a></p>
           <h3>記事一覧</h3>
           <p>記事一覧はmicroCMSを使用して、投稿</p>
           <p>SSG（静的サイトジェネレータ）を使用</p>
@@ -54,7 +56,7 @@ const Home: FC<home> = memo(({ blogs, totalCount }) => {
           <p>QiitaのNext.jsに関する記事（ストック10以上、作成日順）をapiで取得</p>
           <p>ISRを使用して、静的に表示</p>
           <h3>Zenn記事一覧</h3>
-          <p>公式のAPIが特にないため、Webスクレイピングで情報取得</p>
+          <p>ZennのNext.jsに関する記事、公式のAPIが特にないため、Webスクレイピングで情報取得</p>
           <p>ISRを使用して、静的に表示</p>
         </Box>
       </Layout>
