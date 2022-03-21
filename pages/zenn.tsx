@@ -39,7 +39,7 @@ const Zenn: FC<Zenn> = memo(({ zenn }) => {
           fontWeight="bold"
         >Zenn記事一覧
         </Box>
-        {/* <Wrap
+        <Wrap
           p={{ base: 2 }}
           justify="space-between"
           alignItems={"stretch"}
@@ -60,7 +60,7 @@ const Zenn: FC<Zenn> = memo(({ zenn }) => {
               ></ZennCard>
             </WrapItem>
           ))}
-        </Wrap> */}
+        </Wrap>
         {/* <ZennPagination totalCount={totalCount} /> */}
       </Layout>
     </>
@@ -75,7 +75,7 @@ export const getStaticProps = async () => {
       // 'Authorization': `Bearer ${ZennAPIKEY}`
     },
   }
-  const data = await fetch(`next-blog-micro-cms-l8zf7g50e-takuya-wool-sato.vercel.app/api/zenn`,
+  const data = await fetch(`https://next-blog-micro-cms.vercel.app/api/zenn`,
     key
   ).then(res => res.json()).catch(() => null)
   return {
