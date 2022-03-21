@@ -1,5 +1,5 @@
 import { memo, FC } from 'react'
-import { Flex, Box, Heading, Spacer, Button, Image } from '@chakra-ui/react'
+import { Flex, Box, Heading, Spacer, Button, Image, Avatar } from '@chakra-ui/react'
 import NextLink from "next/link"
 import { useSession, signIn, signOut } from "next-auth/react"
 import Link from 'next/link'
@@ -9,6 +9,8 @@ export const Header: FC = memo(() => {
 
   const { data: session, status } = useSession();
 
+  const imageURL: any = session && (session.user && session.user.image)
+  const userName = session && (session.user && session.user.name)
   return (
     <>
       <Flex
@@ -39,29 +41,22 @@ export const Header: FC = memo(() => {
           {
             session ? (
               <>
-                <Image
-                  src={session.user.image}
-                  w="50px"
-                  height={"50px"}
-                  borderRadius="50%"
-                ></Image>
+                <Avatar size='md' name='Ryan Florence' src={imageURL} />
                 <Box
                   fontWeight={"bold"}
                   fontSize="16px"
                   m={"0 10px"}
-                >{session.user.name}</Box>
+                >{userName}</Box>
                 <Button onClick={() => signOut()}>
-                  <a>Log out</a>
+                  Log out
                 </Button>
               </>
             ) :
               (
                 <>
-                  <Link href="/api/auth/signin">
-                    <Button colorScheme='blue'>
-                      Log in
-                    </Button>
-                  </Link>
+                <Button onClick={() => signIn()} colorScheme='blue'>
+                  Login
+                </Button>
                 </>
               )
           }
