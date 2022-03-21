@@ -55,6 +55,21 @@ export const Layout: FC = memo((props) => {
                 </Box>
               </NextLink>
             </ListItem>
+            <ListItem>
+              <NextLink href='/zenn' passHref>
+                <Box
+                  _hover={{ cursor: "pointer", opacity: 0.6 }}
+                  transition="0.3s"
+                  fontWeight="bold"
+                  textAlign="center"
+                  bg="blue.50"
+                  p={3}
+                  mb="20px"
+                >
+                  Zenn記事
+                </Box>
+              </NextLink>
+            </ListItem>
           </List>
         </Flex>
         <Box
