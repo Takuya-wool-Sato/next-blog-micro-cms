@@ -34,7 +34,7 @@ const Blog: FC<Blog> = memo(({ blogs, totalCount }) => {
           fontWeight="bold"
         >記事一覧
         </Box>
-        <Wrap p={{ base: 2 }} justify="space-between" w={{ base: "100%", md: "90%" }} m="auto" mt="10">
+        <Wrap p={{ base: 2 }} justify="space-between" w={{ base: "100%", md: "90%" , xl: "63%"}} m="auto" mt="10">
           {blogs.map((blog: blog) => (
             <WrapItem key={blog.id}>
               <PhotoCard
