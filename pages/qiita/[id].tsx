@@ -49,7 +49,7 @@ export const getStaticPaths = async () => {
   ).then(res => res.json()).catch(() => null)
 
   const paths = data.map((content: any) => `/qiita/${content.id}`);
-  return { paths, fallback: false };
+  return { paths, fallback: 'blocking' };
 };
 
 // データをテンプレートに受け渡す部分の処理を記述します
