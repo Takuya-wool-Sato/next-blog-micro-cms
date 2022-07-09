@@ -7,7 +7,7 @@ const fetchTrend = (html: string) => {
   const $ = cheerio.load(html)
   const raw = $('script[id=__NEXT_DATA__]').html() ?? ''
   if (raw === undefined) return {}
-  const rawData = JSON.parse(raw).props.pageProps.articles.slice(0,9)
+  const rawData = JSON.parse(raw).props.pageProps.articles.slice(0,5)
   // const rawData = JSON.parse(raw).props.pageProps.resTopic
 
   console.log(rawData)
