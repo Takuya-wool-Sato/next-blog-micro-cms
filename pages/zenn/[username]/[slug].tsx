@@ -45,7 +45,7 @@ export const getStaticPaths = async () => {
     },
   }
 
-  const data = await fetch(`http://localhost:3000/api/zenn`,
+  const data = await fetch(`https://next-blog-micro-cms.vercel.app/api/zenn`,
     key
   ).then(res => res.json()).catch(() => null)
 
@@ -63,8 +63,8 @@ export const getStaticProps = async (context: any) => {
       // 'Authorization': `Bearer ${ZennAPIKEY}`
     },
   }
-  const data = await fetch(`http://localhost:3000/api/${username}/${slug}`,
-  // const data = await fetch(`http://localhost:3000/api/takepepe/nextjs-testing-strategy-2022`,
+  const data = await fetch(`https://next-blog-micro-cms.vercel.app/api/${username}/${slug}`,
+  // const data = await fetch(`https://next-blog-micro-cms.vercel.app/api/takepepe/nextjs-testing-strategy-2022`,
 
     key
   ).then(res => res.json()).catch(() => null)
