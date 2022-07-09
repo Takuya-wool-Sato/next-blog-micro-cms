@@ -32,7 +32,7 @@ export const ZennCard: VFC<Props> = memo(props => {
     return format;
   }
   return (
-    <Link href={`https://zenn.dev/${user.username}/articles/${slug}`} replace>
+    <Link href={`zenn/${user.username}/${slug}`} replace>
       <Box
         w="100%"
         bg="white"

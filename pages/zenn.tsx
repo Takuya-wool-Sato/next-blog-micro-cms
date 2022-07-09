@@ -47,7 +47,7 @@ const Zenn: FC<Zenn> = memo(({ zenn }) => {
           m="auto"
           mt="10">
           {zenn.map((data: ZennData) => (
-            <WrapItem key={data.id} w={{ base: "100%", lg: "48%" }}>
+            <WrapItem key={data.id} w={{ base: "100%" }}>
               <ZennCard
                 id={data.id}
                 title={data.title}

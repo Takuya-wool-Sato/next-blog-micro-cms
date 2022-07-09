@@ -7,7 +7,7 @@ import { Pagination } from "../../../components/Pagenation";
 import { client } from "../../../libs/client";
 
 
-const PER_PAGE = 4;
+const PER_PAGE = 9;
 
 type blog = {
   id: string;
@@ -81,7 +81,7 @@ export const getStaticProps = async (context: any) => {
   };
 
   const data = await fetch(
-    `https://m3r0vgn82h.microcms.io/api/v1/blog?offset=${(id - 1) * 4}&limit=4`,
+    `https://m3r0vgn82h.microcms.io/api/v1/blog?offset=${(id - 1) * 9}&limit=9`,
     key
   ).then(res => res.json()).catch(() => null)
 
