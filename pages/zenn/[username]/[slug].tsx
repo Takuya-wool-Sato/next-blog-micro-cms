@@ -4,6 +4,14 @@ import { Layout } from "../../../components/templates/Layout";
 
 const ZennAPIKEY = process.env.Zenn_API_KEY
 
+type Zenn = {
+  zenn: {
+    title: string;
+    publishedAt: string;
+    bodyHtml: any;
+  };
+}
+
 // eslint-disable-next-line react/display-name
 const Zenn: FC<Zenn> = memo(({ zenn }) => {
   console.log(zenn)
