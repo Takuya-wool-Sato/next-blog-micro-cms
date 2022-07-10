@@ -44,7 +44,7 @@ export const getStaticPaths = async () => {
     },
   }
 
-  const data = await fetch(`https://qiita.com/api/v2/items?page=1&per_page=100&query=tag:Next.js+stocks:>10`,
+  const data = await fetch(`https://qiita.com/api/v2/items?page=1&per_page=50&query=tag:Next.js+stocks:>10`,
     key
   ).then(res => res.json()).catch(() => null)
 
