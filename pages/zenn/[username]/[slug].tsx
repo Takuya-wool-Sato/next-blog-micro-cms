@@ -18,7 +18,7 @@ const Zenn: FC<Zenn> = memo(({ zenn }) => {
   return (
     <>
       <Layout>
-        <article className="markdown-body">
+        <article className="markdown-body znc">
           <Box
             padding={{ base: 10 }}
           >
