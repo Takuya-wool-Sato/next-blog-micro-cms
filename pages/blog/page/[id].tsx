@@ -1,4 +1,4 @@
-import { Box, Wrap, WrapItem } from "@chakra-ui/react";
+import { Box, Flex, Wrap, WrapItem } from "@chakra-ui/react";
 import Link from "next/link";
 import { memo, FC } from "react";
 import { Layout } from "../../../components/templates/Layout";
@@ -34,9 +34,9 @@ export default function Home({ blogs, totalCount }: { blogs: any, totalCount: nu
           fontWeight="bold"
         >記事一覧
         </Box>
-        <Wrap p={{ base: 2 }} justify="space-between" w={{ base: "100%", md: "90%" }} m="auto" mt="10">
+        <Flex p={{ base: 2 }} justify="center" w={{ base: "100%"}} m="auto" mt="10" flexWrap={"wrap"}>
           {blogs.map((blog: blog) => (
-            <WrapItem key={blog.id}>
+            <Box key={blog.id} m={{ base: "0", sm: "0 20px 20px"}}>
               <PhotoCard
                 id={blog.id}
                 title={blog.title}
@@ -44,9 +44,23 @@ export default function Home({ blogs, totalCount }: { blogs: any, totalCount: nu
                 publishedAt={blog.publishedAt}
                 tag={blog.tag}
               />
-            </WrapItem>
+            </Box>
           ))}
-        </Wrap>
+          <Box m={{ base: "0", sm: "0 20px 20px"}}>
+            <Box
+              w={{ base: "70vw", md: "400px" }}
+              h={{ base: 0}}
+            >
+            </Box>
+          </Box>
+          <Box m={{ base: "0", sm: "0 20px 20px"}}>
+            <Box
+              w={{ base: "70vw", md: "400px" }}
+              h={{ base: 0}}
+            >
+            </Box>
+          </Box>
+        </Flex>
         <Pagination totalCount={totalCount} />
       </Layout>
     </>

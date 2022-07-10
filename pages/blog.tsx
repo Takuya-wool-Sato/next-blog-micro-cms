@@ -46,6 +46,20 @@ const Blog: FC<Blog> = memo(({ blogs, totalCount }) => {
               />
             </Box>
           ))}
+          <Box m={{ base: "0", sm: "0 20px 20px"}}>
+            <Box
+              w={{ base: "70vw", md: "400px" }}
+              h={{ base: 0}}
+            >
+            </Box>
+          </Box>
+          <Box m={{ base: "0", sm: "0 20px 20px"}}>
+            <Box
+              w={{ base: "70vw", md: "400px" }}
+              h={{ base: 0}}
+            >
+            </Box>
+          </Box>
         </Flex>
         <Pagination totalCount={totalCount} />
       </Layout>
@@ -55,7 +69,14 @@ const Blog: FC<Blog> = memo(({ blogs, totalCount }) => {
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "blog" });
+  const key: any = {
+    headers: { 'X-MICROCMS-API-KEY': process.env.API_KEY }
+  };
+
+  const data = await fetch(
+    `https://m3r0vgn82h.microcms.io/api/v1/blog?offset=0&limit=9`,
+    key
+  ).then(res => res.json()).catch(() => null)
 
   return {
     props: {
