@@ -1032,3 +1032,29 @@
 .markdown-body ::-webkit-calendar-picker-indicator {
   filter: invert(50%);
 }
+
+.znc aside.msg{
+  display: flex;
+  align-items: flex-start;
+  margin: 1.5rem 0;
+  padding: 1.4em 1em;
+  border-radius: 10px;
+  background: #fff6e4;
+  color: #000000a6;
+  font-size: .94em;
+  line-height: 1.6;
+}
+
+.znc .msg-icon {
+  position: relative;
+  top: 0.05em;
+  width: 1.4em;
+  height: 1.4em;
+  color: #ffb84c;
+}
+
+.znc .msg-content {
+  flex: 1;
+  margin-left: 0.6em;
+  min-width: 0;
+}
