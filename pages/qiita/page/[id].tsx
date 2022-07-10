@@ -5,7 +5,7 @@ import { QiitaCard } from "../../../components/templates/organisms/QiitaCard";
 import { QiitaPagination } from "../../../components/QiitaPagination";
 
 const PER_PAGE = 10
-const totalCount = 100
+const totalCount = 50
 const QIITAAPIKEY = process.env.QIITA_API_KEY
 
 type Qiita = {
